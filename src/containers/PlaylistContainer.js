@@ -6,7 +6,7 @@ function PlaylistContainer(props) {
 
     return (
         <PlaylistDisplay 
-        onChangeName={props.handleChangeName} 
+        onChangeName={props.onChangeName} 
         playlistTracks={props.playlistTracks} 
         onRemove={props.onRemove}
         onSave={props.onSave}

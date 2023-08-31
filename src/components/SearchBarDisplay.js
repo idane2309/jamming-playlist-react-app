@@ -1,11 +1,12 @@
 import React from 'react';
+import '../modules/SearchBar.css'
 
 function SearchBarDisplay(props) {
     return (
-        <form onSubmit={props.onSubmit}>
-            <input type="text" placeholder="Search..." value={props.search} onChange={props.onChange} />
-            <button type="submit">Submit</button>
-        </form>
+        <div className="SearchBar" >
+            <input type="text" placeholder="Enter a song title..." onChange={props.onChange} />
+            <button className="SearchButton" onClick={props.onClick}>Search</button>
+        </div>
     )
 }
 

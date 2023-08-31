@@ -1,15 +1,22 @@
 import React from 'react';
 import TrackContainer from '../containers/TrackContainer';
+import '../modules/TrackList.css';
 
 function TracklistDisplay(props) {
     return (
-        <ul>
-            {props.songs.map((track) => {
+        <div className="TrackList">
+            {props.tracks.map((track) => {
                 return (
-                    <TrackContainer track={track} setPlaylist={props.setPlaylist}/>
+                    <TrackContainer 
+                    track={track} 
+                    key={track.id}
+                    onAdd={props.onAdd}
+                    onRemove={props.onRemove}
+                    isRemoval={props.isRemoval}
+                    />
                 )
             })}
-        </ul>
+        </div>
     )
 }
 

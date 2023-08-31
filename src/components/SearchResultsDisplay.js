@@ -1,18 +1,12 @@
 import React from 'react';
+import TracklistContainer from '../containers/TracklistContainer';
+import '../modules/SearchResults.css';
 
 function SearchResultsDisplay(props) {
     return (
-        <div>
+        <div className="SearchResults">
             <h2>Results</h2>
-            <ul>
-                {props.results.map((result) => {
-                    return (
-                        <li>
-                            {result.title} by {result.artist}
-                        </li>
-                    )
-                })}
-            </ul>
+            <TracklistContainer tracks={props.results} onAdd={props.onAdd} />
         </div>
     )
 }

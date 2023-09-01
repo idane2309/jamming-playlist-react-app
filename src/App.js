@@ -8,7 +8,7 @@ import Spotify from "./Spotify"
 
 function App() {
   const [results, setResults] = useState([])
-  const [playlistName, setPlaylistName] = useState("")
+  const [playlistName, setPlaylistName] = useState("New Playlist")
   const [playlistTracks, setPlaylistTracks] = useState([])
 
   function search(search) {
@@ -32,7 +32,7 @@ function App() {
     setPlaylistName(name)
   }
 
-  function saveToPlaylist() {
+  function savePlaylist() {
     const trackUris = playlistTracks.map((track) => track.uri)
     Spotify.savePlaylist(playlistName, trackUris).then(() => {
       setPlaylistName("New Playlist")
@@ -48,13 +48,13 @@ function App() {
       <div className="App">
         <SearchBarContainer onSearch={search}/>
         <div className="App-playlist">
-          <SearchResultsContainer results={results} onAdd={addTrack} /> 
+          <SearchResultsContainer results={results} onAdd={addTrack}/> 
           <PlaylistContainer
             playlistName={playlistName}
             playlistTracks={playlistTracks}
             onChangeName={updatePlaylistName}
             onRemove={removeTrack}
-            onSave={saveToPlaylist}
+            onSave={savePlaylist}
            />
         </div>
       </div>

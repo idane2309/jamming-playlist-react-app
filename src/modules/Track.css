@@ -35,3 +35,32 @@
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
 }
+
+.Track-audio {
+    display: flex;
+    margin: 0.9rem 1.0rem;
+    justify-content: space-between;
+}
+
+.Track-audio audio{
+   color: black;
+   padding: 5px; 
+}
+
+.Track-audio button{
+    cursor: pointer;
+    width: 7rem;
+    padding: .77rem 0;
+    border-radius: 54px;
+    border-width: 0px;
+    background-color: #6c41ec;
+    text-align: center;
+    font-size: .83rem;
+    transition: background-color .25s;
+    color: #fff;
+    font-weight: 500;
+}
+
+.Track-audio button:hover {
+    background-color: rgba(108, 65, 233, .7);
+}

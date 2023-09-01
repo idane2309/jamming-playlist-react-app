@@ -46,7 +46,7 @@ const Spotify = {
 
     savePlaylist(name, trackUris) {
         if (!name || !trackUris.length) {
-          return;
+          return Promise.reject(new Error("Name or track URIs not provided."));
         }
     
         const accessToken = Spotify.getAccessToken();
@@ -71,6 +71,22 @@ const Spotify = {
             });
           });
         });
+      },
+
+      previewTrack(track) {
+        const accessToken = Spotify.getAccessToken();
+        return fetch(`https://api.spotify.com/v1/tracks/${track.id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+          }
+        })
+        .then(response => response.json())
+        .then(jsonResponse => jsonResponse.preview_url)
+        .catch(error => {
+            console.error("Error fetching preview:", error);
+            return null;
+        });
+
       }
 }
 

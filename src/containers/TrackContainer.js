@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TrackDisplay from '../components/TrackDisplay';
+import Spotify from "../Spotify"
+
 
 function TrackContainer(props) {
 

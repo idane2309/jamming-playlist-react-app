@@ -4,7 +4,12 @@ import TracklistDisplay from '../components/TracklistDisplay';
 function TracklistContainer(props) {
 
     return (
-        <TracklistDisplay tracks={props.tracks} onAdd={props.onAdd} onRemove={props.onRemove} isRemoval={props.isRemoval} />
+        <TracklistDisplay 
+        tracks={props.tracks} 
+        onAdd={props.onAdd} 
+        onRemove={props.onRemove} 
+        isRemoval={props.isRemoval} 
+        />
     )
 }
 

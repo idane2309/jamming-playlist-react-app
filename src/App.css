@@ -6,7 +6,9 @@ html,
 
 html {
   font-size: 18px;
+  background-color: #010c3f;
 }
+
 
 h1 {
   padding: .77rem 0;

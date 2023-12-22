@@ -33,10 +33,15 @@ function App() {
   }
 
   function savePlaylist() {
+    if (playlistTracks.length === 0) {
+      alert('No songs in the playlist. Please add songs before saving.');
+      return;
+    }
     const trackUris = playlistTracks.map((track) => track.uri)
     Spotify.savePlaylist(playlistName, trackUris).then(() => {
       setPlaylistName("New Playlist")
       setPlaylistTracks([])
+      alert('Playlist saved successfully.'); // Alert the user
     })
   }
 
